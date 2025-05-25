@@ -1,0 +1,24 @@
+h4 {
+    color: #757575;
+}
+
+
+/* 톱니바퀴 뺑글뺑글 돌게 만들기 */
+.gear-rotate:hover {
+    animation: rotate-gear 3s linear infinite;
+}
+@keyframes rotate-gear {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+
+/* 커서 올렸을 때 박스 리사이징 효과 */
+.box-animate {
+    transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+.box-animate:hover,
+.box-animate:hover h4{
+    transform: scale(1.05);
+    color: black;
+}
