@@ -1,19 +1,22 @@
+/* h4 태그 기본 글자색 */
 h4 {
     color: #757575;
 }
 
 
-/* 톱니바퀴 뺑글뺑글 돌게 만들기 */
+/* 톱니바퀴 이미지에 마우스를 올렸을 때 회전 애니메이션 */
 .gear-rotate:hover {
     animation: rotate-gear 3s linear infinite;
 }
+
+/* 회전 애니메이션 keyframes */
 @keyframes rotate-gear {
     0% { transform: rotate(0deg);}
     100% { transform: rotate(360deg);}
 }
 
 
-/* 커서 올렸을 때 박스 리사이징 효과 */
+/* 박스에 마우스를 올렸을 때 살짝 커지고 글자색이 검정색으로 변경 */
 .box-animate {
     transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
 }

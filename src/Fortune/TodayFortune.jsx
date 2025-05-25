@@ -1,7 +1,8 @@
-import BackgroundImg from '../Images/Fortunepage-Background.png';
-import DotTyping from './DotTyping';
+import BackgroundImg from '../Images/Fortunepage-Background.png'; // 배경 이미지 import
+import DotTyping from './DotTyping'; // 점 애니메이션 컴포넌트 import
 
 function TodayFortune() {
+    // 메인 컨테이너 스타일
     const containerStyle = {
         position: "relative",
         maxWidth: "auto",
@@ -21,6 +22,7 @@ function TodayFortune() {
         overflow: "hidden",
     };
 
+    // 배경 이미지 스타일
     const BackgroundImgStyle = {
         position: "absolute",
         width: "100%",
@@ -30,19 +32,22 @@ function TodayFortune() {
         borderRadius: "2vw"
     };
 
+    // 텍스트 스타일
     const textStyle = {
         fontFamily: "'HakgyoansimChilpanjiugaeTTF-B', sans-serif",
         fontSize: "2.4vw",
-
         marginTop: "9vw",
         marginLeft: "-5vw",
         color: "#757575",
     };
 
     return (
+        // 운세 컨테이너
         <div style={containerStyle}>
+            {/* 배경 이미지 */}
             <img src={BackgroundImg} alt="배경 이미지" style={BackgroundImgStyle}/>
-                <div style={textStyle}>오늘의 운세는<DotTyping/></div>
+            {/* 점 애니메이션 */}
+            <div style={textStyle}>오늘의 운세는<DotTyping/></div>
         </div>    
     );
 }
