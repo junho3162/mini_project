@@ -1,3 +1,6 @@
+import BackgroundImg from '../Images/Fortunepage-Background.png';
+import DotTyping from './DotTyping';
+
 function TodayFortune() {
     const containerStyle = {
         position: "relative",
@@ -15,12 +18,31 @@ function TodayFortune() {
         padding: "2rem",
         borderRadius: "2vw",
         border: "0.2vw solid black",
-        overflow: "visible",
+        overflow: "hidden",
+    };
+
+    const BackgroundImgStyle = {
+        position: "absolute",
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        zIndex: "-1",
+        borderRadius: "2vw"
+    };
+
+    const textStyle = {
+        fontFamily: "'HakgyoansimChilpanjiugaeTTF-B', sans-serif",
+        fontSize: "2.4vw",
+
+        marginTop: "9vw",
+        marginLeft: "-5vw",
+        color: "#757575",
     };
 
     return (
         <div style={containerStyle}>
-            
+            <img src={BackgroundImg} alt="배경 이미지" style={BackgroundImgStyle}/>
+                <div style={textStyle}>오늘의 운세는<DotTyping/></div>
         </div>    
     );
 }
