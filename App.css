@@ -1,0 +1,519 @@
+.오리박스 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.오리컨테이너 {
+  display: flex;
+  justify-content: space-between; /* 좌우 배치 */
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: -50px; /* 전체를 위로 올림 */
+  position: relative;
+}
+
+.오리이미지 {
+  width: 100px;
+  height: auto;
+  z-index: 2;
+  margin-left: -10px; /* 왼쪽으로 더 치우치게 */
+}
+
+.나무이미지 {
+  width: 130px;
+  height: auto;
+  z-index: 33;
+  margin-right: -20px; /* 오른쪽으로 더 치우치게 */
+}
+
+.민트박스 {
+  margin-top: -70px;
+  width: 370px;
+  height: 300px;
+  background-color: #EBF7FA8C;
+  border-radius: 30px;
+  padding: 0px;
+  z-index: 1;
+}
+
+.box {
+  width: 100%;
+  max-width: 400px;
+  height: 95vh; /* 더 길쭉하게 */
+  margin: 1rem auto 0; /* 위쪽에 여백 줘서 아래로 내림 */
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.달력내용 {
+  position: absolute;
+  top: 80px; /* 민트박스와 겹치도록 조정 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(150px * 2 + 100px); /* 민트박스 너비와 같게 */
+  z-index: 3; /* 민트박스보다 위에 */
+  pointer-events: none;
+  font-family: Arial, sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.연도 {
+  align-self: flex-start;
+  margin-left: 30px;
+}
+
+.연도 p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 -10px 0;
+  color: #797B78A6;
+}
+
+.월 p {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: #858C85;
+}
+
+.요일 p {
+  font-size: 13px;
+  margin: 5px 0;
+  white-space: pre;
+  text-align: center;
+  line-height: 2.1;
+}
+
+.월화수{
+  letter-spacing: 3px;
+  color: #666666;
+}
+
+.일1{
+  letter-spacing: 2.4px;
+  color: #333333;
+}
+
+.일2{
+  letter-spacing: 3px;
+  color: #333333;
+}
+
+.일3{
+  letter-spacing: 3px;
+  color: #333333;
+}
+
+.일4{
+  letter-spacing: 3px;
+  color: #333333;
+}
+
+.일5{
+  letter-spacing: 3px;
+  color: #333333;
+}
+
+.왼쪽파란박스 {
+  position: absolute;
+  bottom: 20px;       /* box 내부 기준 아래 여백 */
+  left: 20px;         /* 왼쪽 여백 */
+  width: 180px;        /* 원하는 만큼 조정 가능 */
+  height: 310px;        /* 위로 길쭉하게 */
+  background-color: #EBF7FA; /* 알파값 없는 HEX 코드 → 완전 불투명 */
+  border-radius: 10px;
+  border: 2px solid #BADFE9; /* 연한 파란 테두리 */
+  z-index: 2;
+}
+
+.일기칸 {
+  position: absolute;
+  bottom: 80px;       /* box 내부 기준 아래 여백 */
+  left: 10px;         /* 왼쪽 여백 */
+  width: 143.8px;        /* 원하는 만큼 조정 가능 */
+  height: 200px;        /* 위로 길쭉하게 */
+  background-color: #EBF7FA; /* 알파값 없는 HEX 코드 → 완전 불투명 */
+  border-radius: 10px;
+  border: 8px solid #BADFE9; /* 연한 파란 테두리 */
+  z-index: 2;
+}
+
+.손{
+    position: absolute;
+  width: 20px;
+  left: 120px;
+  bottom: 177px;
+  z-index: 4;
+}
+
+.별{
+    position: absolute;
+  width: 20px;
+  right: 120px;
+  bottom: 175px;
+  z-index: 4;
+}
+
+.선1 {
+  position: absolute;
+  bottom: 20px;       /* box 내부 기준 아래 여백 */
+  right: 19px;         /* 왼쪽 여백 */
+  width: 105px;        /* 원하는 만큼 조정 가능 */
+  height: 2px;        /* 위로 길쭉하게 */
+  background-color: #BADFE9; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.선2 {
+  position: absolute;
+  bottom: 40px;       /* box 내부 기준 아래 여백 */
+  right: 19px;         /* 왼쪽 여백 */
+  width: 105px;        /* 원하는 만큼 조정 가능 */
+  height: 2px;        /* 위로 길쭉하게 */
+  background-color: #BADFE9; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.선3 {
+  position: absolute;
+  bottom: 60px;       /* box 내부 기준 아래 여백 */
+  right: 19px;         /* 왼쪽 여백 */
+  width: 105px;        /* 원하는 만큼 조정 가능 */
+  height: 2px;        /* 위로 길쭉하게 */
+  background-color: #BADFE9; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.선4 {
+  position: absolute;
+  bottom: 80px;       /* box 내부 기준 아래 여백 */
+  right: 19px;         /* 왼쪽 여백 */
+  width: 105px;        /* 원하는 만큼 조정 가능 */
+  height: 2px;        /* 위로 길쭉하게 */
+  background-color: #BADFE9; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.사진칸 {
+  position: absolute;
+  bottom: 110px;       /* box 내부 기준 아래 여백 */
+  left: 17px;         /* 왼쪽 여백 */
+  width: 110px;        /* 원하는 만큼 조정 가능 */
+  height: 60px;        /* 위로 길쭉하게 */
+  background-color: #E0F1F6; /* 파란 배경 */
+  border-radius: 13px;
+  z-index: 3;
+}
+
+.카메라 {
+  position: absolute;
+  width: 20px;
+  right: 45px;
+  top: 20px;
+}
+
+
+.동그라미{
+  position: absolute;
+  bottom: 20px;       /* box 내부 기준 아래 여백 */
+  left: 20px;         /* 왼쪽 여백 */
+  width: 110px;        /* 원하는 만큼 조정 가능 */
+  height: 50px;        /* 위로 길쭉하게 */
+  background-color: #E0F1F6; /* 파란 배경 */
+  border-radius: 50px;
+  z-index: 3;
+}
+
+.동그라미 p{
+    font-size: 10px;
+  text-align: center;
+  line-height: 50px;  /* 박스 높이와 같게 설정 */
+  margin: 0;
+  color: #333;
+}
+
+.오른쪽파란박스 {
+  position: absolute;
+  bottom: 94px;       /* box 내부 기준 아래 여백 */
+  right: 20px;         /* 왼쪽 여백 */
+  width: 150px;        /* 원하는 만큼 조정 가능 */
+  height: 240px;        /* 위로 길쭉하게 */
+  background-color: #E0F1F6; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.메뉴바 {
+  position: absolute;
+  bottom: 5px;       /* box 내부 기준 아래 여백 */
+  right: 9.1px;         /* 왼쪽 여백 */
+  width: 55px;        /* 원하는 만큼 조정 가능 */
+  height: 300px;        /* 위로 길쭉하게 */
+  background-color: white; /* 파란 배경 */
+  border-radius: 30px;
+  border: 2px solid #b9bfbf;
+  z-index: 50;
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 1.8s ease-in-out, transform 1.8s cubic-bezier(0.25, 1, 0.3, 1);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.메뉴바.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.메뉴바.hide {
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  pointer-events: none;
+}
+
+
+.꽃1 {
+  position: absolute;
+  bottom: 170px; /* 필요 위치로 조정 */
+  right: 3px;
+  width: 50px;
+  height: auto;
+  z-index: 9; /* 최대한 위로 */
+}
+
+.꽃2 {
+  position: absolute;
+  bottom: 50px; /* 필요 위치로 조정 */
+  right: 3px;
+  width: 45px;
+  height: auto;
+  z-index: 9; /* 최대한 위로 */
+}
+
+.꽃3 {
+  position: absolute;
+  bottom: 110px; /* 필요 위치로 조정 */
+  right: 7px;
+  width: 40px;
+  height: auto;
+  z-index: 9; /* 최대한 위로 */
+}
+
+.톱니 {
+  position: absolute;
+  bottom: 230px; /* 필요 위치로 조정 */
+  right: 5px;
+  width: 45px;
+  height: auto;
+  z-index: 9; /* 최대한 위로 */
+}
+
+.메뉴1 {
+  position: absolute;
+  bottom: 40px;       /* box 내부 기준 아래 여백 */
+  right: 20px;         /* 왼쪽 여백 */
+  width: 35px;        /* 원하는 만큼 조정 가능 */
+  height: 5px;        /* 위로 길쭉하게 */
+  background-color: #E0F1F6; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 100;
+}
+
+.메뉴2 {
+  position: absolute;
+  bottom: 30px;       /* box 내부 기준 아래 여백 */
+  right: 20px;         /* 왼쪽 여백 */
+  width: 35px;        /* 원하는 만큼 조정 가능 */
+  height: 5px;        /* 위로 길쭉하게 */
+  background-color: #E0F1F6; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 100;
+}
+
+.메뉴3 {
+  position: absolute;
+  bottom: 20px;       /* box 내부 기준 아래 여백 */
+  right: 20px;         /* 왼쪽 여백 */
+  width: 35px;        /* 원하는 만큼 조정 가능 */
+  height: 5px;        /* 위로 길쭉하게 */
+  background-color: #E0F1F6; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 100;
+}
+
+.오른쪽파란박스 p {
+  font-size: 13px;
+  text-align: center;
+  line-height: 170px;  /* 박스 높이와 같게 설정 */
+  margin: 0;
+  color: #333;
+}
+
+.오리 {
+  position: absolute;
+  bottom: -20px; /* 필요 위치로 조정 */
+  right: 140px;
+  width: 135px;
+  height: auto;
+  z-index: 9; /* 최대한 위로 */
+}
+
+.바탕 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;     /* 충분히 넓게 */
+  height: 2000px;     /* 충분히 길게 */
+  background-color: white;
+  border-radius: 30px;
+  z-index: 30;         /* 낮게 설정해서 다른 요소들이 위에 오도록 */
+}
+
+.일기상자{
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  width: 300px;        /* 원하는 만큼 조정 가능 */
+  height: 500px;        /* 위로 길쭉하게 */
+  background-color: #EBF7FA; /* 알파값 없는 HEX 코드 → 완전 불투명 */
+  border-radius: 10px;
+  border: 2px solid #BADFE9; /* 연한 파란 테두리 */
+  z-index: 33;
+}
+
+.일기상자2 {
+  position: absolute;
+  left: 21.6px;
+  top: 20px;
+  width: 240px;        /* 원하는 만큼 조정 가능 */
+  height: 350px;        /* 위로 길쭉하게 */
+  background-color: #EBF7FA; /* 알파값 없는 HEX 코드 → 완전 불투명 */
+  border-radius: 10px;
+  border: 8px solid #BADFE9; /* 연한 파란 테두리 */
+  z-index:34;
+}
+
+.손2{
+  position: absolute;
+  width: 35px;
+  left: 203px;
+  bottom: 313px;
+  z-index: 35;
+}
+
+.별2{
+  position: absolute;
+  width: 35px;
+  right: 200px;
+  bottom: 310px;
+  z-index: 35;
+}
+
+.카메라칸2 {
+  position: absolute;
+  bottom: 180px;       /* box 내부 기준 아래 여백 */
+  left: 24.7px;         /* 왼쪽 여백 */
+  width: 190px;        /* 원하는 만큼 조정 가능 */
+  height: 110px;        /* 위로 길쭉하게 */
+  background-color: #E0F1F6; /* 파란 배경 */
+  border-radius: 20px;
+  z-index: 35;
+}
+
+.카메라2 {
+  position: absolute;
+  width: 30px;
+  right: 81.5px;
+  top: 40px;
+}
+
+.선5 {
+  position: absolute;
+  bottom: 150px;       /* box 내부 기준 아래 여백 */
+  right: 21px;         /* 왼쪽 여백 */
+  width: 200px;        /* 원하는 만큼 조정 가능 */
+  height: 3px;        /* 위로 길쭉하게 */
+  background-color: #BADFE9; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.선6 {
+  position: absolute;
+  bottom: 110px;       /* box 내부 기준 아래 여백 */
+  right: 21px;         /* 왼쪽 여백 */
+  width: 200px;        /* 원하는 만큼 조정 가능 */
+  height: 3px;        /* 위로 길쭉하게 */
+  background-color: #BADFE9; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.선7 {
+  position: absolute;
+  bottom: 70px;       /* box 내부 기준 아래 여백 */
+  right: 21px;         /* 왼쪽 여백 */
+  width: 200px;        /* 원하는 만큼 조정 가능 */
+  height: 3px;        /* 위로 길쭉하게 */
+  background-color: #BADFE9; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.선8 {
+  position: absolute;
+  bottom: 30px;       /* box 내부 기준 아래 여백 */
+  right: 21px;         /* 왼쪽 여백 */
+  width: 200px;        /* 원하는 만큼 조정 가능 */
+  height: 3px;        /* 위로 길쭉하게 */
+  background-color: #BADFE9; /* 파란 배경 */
+  border-radius: 30px;
+  z-index: 2;
+}
+
+.오리2 {
+  position: absolute;
+  top: 440px;
+  left: 210px;
+  width: 220px;
+  height: auto;
+  z-index: 35; /* 최대한 위로 */
+}
+
+.동그라미2 {
+  position: absolute;
+  top: 410px;
+  left: 50px;
+  width: 160px;        /* 원하는 만큼 조정 가능 */
+  height: 70px;        /* 위로 길쭉하게 */
+  background-color: #E0F1F6; /* 파란 배경 */
+  border-radius: 25px;
+  z-index: 35;
+}
+
+.동그라미2 p{
+  font-size: 11px;
+  text-align: center;
+  line-height: 60px;  /* 박스 높이와 같게 설정 */
+  margin: 0;
+  color: #333;
+}
