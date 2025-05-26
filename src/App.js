@@ -4,6 +4,7 @@ import NAVPage from './Secondpage/NAVPage'; // 네비게이션 페이지 컴포�
 import SetInfo from './Settingpage/Infopage'; // 사용자 정보 입력 페이지 import
 import TodayFortune from './Fortune/TodayFortune'; // 오늘의 운세 페이지 import
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // 라우팅 관련 import
+import Sharepage from './Sharepage/Shraepage';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
             <Route path='/User' element={<SetInfo/>}/>
             {/* 오늘의 운세 페이지 */}
             <Route path='/TodaysFortune' element={<TodayFortune/>}/>
+            {/* 공유 페이지 */}
+            <Route path='/Sharepage' element={<Sharepage/>}/>
           </Routes>
         </BrowserRouter>
       </div>

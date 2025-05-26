@@ -107,6 +107,10 @@ function NAVPage() {
         navigate('/TodaysFortune'); // 클릭시 TodayFortune 페이지로 이동
     };
 
+    const handleBox3Click = () => {
+        navigate('/Sharepage'); // 클릭시 TodayFortune 페이지로 이동
+    };
+
     return (
         <div style={containerStyle}>
             {/* 톱니바퀴 배경 */}
@@ -122,7 +126,7 @@ function NAVPage() {
                 <h4>기록 확인</h4>
             </div>
             {/* 추천 여행지 박스 */}
-            <div style={boxStyle3} className="box-animate"> 
+            <div style={boxStyle3} alt="공유 페이지" className="box-animate" oncClick={handleBox3Click}> 
                 <h4>추천 여행지 보러가기</h4>
             </div>
         </div>

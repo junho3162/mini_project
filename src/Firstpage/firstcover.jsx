@@ -7,6 +7,9 @@ function Cover() {
 
   // 화살표 클릭 시 /NAV로 이동
   const handleArrowClick = () => {
+    const audio = new Audio(process.env.PUBLIC_URL + '/페이지넘기는소리1.mp3');
+    audio.play();
+
     navigate('/NAV');
   };
 
