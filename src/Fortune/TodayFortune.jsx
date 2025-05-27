@@ -13,7 +13,7 @@ function TodayFortune() {
     const [selectedImg, setSelectedImg] = useState(null);
     const [showDots, setShowDots] = useState(false);
     const [showImg, setShowImg] = useState(false);
-
+    
     // 점(...)이 나타난 뒤 0.5초 후 이미지도 fade-in
     useEffect(() => {
         if (dotDone) {
@@ -25,6 +25,13 @@ function TodayFortune() {
 
     // 이미지 목록
     const images = [FlowerDuck, NormalDuck, SleepDuck, UmbrellaDuck];
+    // 각 이미지에 대응하는 텍스트
+    const fortuneTexts = [
+        "오늘은 꽃길만 걷는 하루가 될 거예요!",
+        "평범하지만 소소한 행복이 찾아올 거예요.",
+        <>충분한 휴식이 필요한 하루예요.<br/>&emsp;&emsp;&emsp;푹 쉬세요!</>,
+        "오늘은 조심하는게 좋겠어요.."
+    ];
 
     // 점 애니메이션이 끝나면(3개) 이미지 랜덤 선택
     useEffect(() => {
@@ -78,16 +85,34 @@ function TodayFortune() {
 
     const imgStyle = {
         position: "absolute",
-        bottom: "0vw",
-        width: "23.4vw",
-        margin: "2vw auto 0 20vw",
+        bottom: "0",
+        width: "23vw",
+        margin: "2vw auto -2vw 20vw",
         display: "block",
         zIndex: 1
     };
 
+    // 선택된 이미지에 맞는 텍스트 인덱스 구하기
+    const selectedIdx = images.findIndex(img => img === selectedImg);
+
     return (
         // 운세 컨테이너
         <div style={containerStyle}>
+            {/* 노치 */}
+            <div
+                style={{
+                    position: "absolute",
+                    top: "0vw",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "10vw",
+                    height: "1.7vw",
+                    background: "black",
+                    borderRadius: "0 0 2vw 2vw",
+                    zIndex: 10,
+                    opacity: 0.85,
+                }}
+            />
             {/* 배경 이미지 */}
             <img src={BackgroundImg} alt="배경 이미지" style={BackgroundImgStyle}/>
             {/* "오늘의 운세는" 텍스트는 항상 표시 */}
@@ -108,7 +133,27 @@ function TodayFortune() {
                     )}
                 </span>
             </div>
-            <div style={{ height: '35vw', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            <div style={{ height: '35vw', display: 'flex', justifyContent: 'center',
+                alignItems: 'center', flexDirection: 'column', position: 'relative', 
+                fontFamily: "'HakgyoansimChilpanjiugaeTTF-B', sans-serif" }}>
+                {/* 운세 텍스트 */}
+                {dotDone && selectedImg && (
+                    <div
+                        className={`fade-in${showImg ? ' show' : ''}`}
+                        style={{
+                            position: 'absolute',
+                            top: '2vw',
+                            left: '10vw',
+                            transform: 'translateX(-50%)',
+                            fontSize: '1.7vw',
+                            padding: '4vw 10vw',
+                            zIndex: 2,
+                            whiteSpace: 'nowrap'
+                        }}
+                    >
+                        {fortuneTexts[selectedIdx]}
+                    </div>
+                )}
                 {dotDone && selectedImg && (
                     <>
                         <img
@@ -117,27 +162,6 @@ function TodayFortune() {
                             style={imgStyle}
                             className={`fade-in${showImg ? ' show' : ''}`}
                         />
-                        {/* 네이버 운세 안내 문구 및 링크 */}
-                        <div style={{ marginTop: '-15vw', textAlign: 'center' }}>
-                            <span
-                                className={`fade-in${showImg ? ' show' : ''}`}
-                                style={{
-                                    color: '#757575',
-                                    fontSize: '1.2vw',
-                                    fontFamily: "'HakgyoansimChilpanjiugaeTTF-B', sans-serif"
-                                }}
-                            >
-                                {/* 더 자세한 운세가 궁금하다면&nbsp; */}
-                                {/* <a
-                                    href="https://m.search.naver.com/search.naver?where=m&sm=mtp_hty.top&query=%EC%98%A4%EB%8A%98%EC%9D%98%20%EC%9A%B4%EC%84%B8"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    style={{ color: '#1e90ff', textDecoration: 'underline', fontWeight: 'bold' }}
-                                >
-                                    네이버 오늘의 운세 바로가기 */}
-                                {/* </a> */}
-                            </span>
-                        </div>
                     </>
                 )}
             </div>

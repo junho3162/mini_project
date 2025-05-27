@@ -108,11 +108,26 @@ function NAVPage() {
     };
 
     const handleBox3Click = () => {
-        navigate('/Sharepage'); // 클릭시 TodayFortune 페이지로 이동
+        navigate('/Sharepage'); 
     };
 
     return (
         <div style={containerStyle}>
+            {/* 노치 */}
+            <div
+                style={{
+                    position: "absolute",
+                    top: "0vw",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "10vw",
+                    height: "1.7vw",
+                    background: "black",
+                    borderRadius: "0 0 2vw 2vw",
+                    zIndex: 10,
+                    opacity: 0.85,
+                }}
+            />
             {/* 톱니바퀴 배경 */}
             <div style={gearBgStyle}></div>
             {/* 톱니바퀴 이미지 (클릭 시 /User로 이동) */}

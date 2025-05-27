@@ -5,6 +5,7 @@ import SetInfo from './Settingpage/Infopage'; // 사용자 정보 입력 페이�
 import TodayFortune from './Fortune/TodayFortune'; // 오늘의 운세 페이지 import
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // 라우팅 관련 import
 import Sharepage from './Sharepage/Shraepage';
+import Map from './TravelRecommend/Mappage'; // 여행지 추천 페이지 import
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path='/TodaysFortune' element={<TodayFortune/>}/>
             {/* 공유 페이지 */}
             <Route path='/Sharepage' element={<Sharepage/>}/>
+            {/* 여행지 추천 페이지 */}
+            <Route path='/Mappage' element={<Map/>}/>
           </Routes>
         </BrowserRouter>
       </div>

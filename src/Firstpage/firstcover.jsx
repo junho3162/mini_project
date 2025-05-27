@@ -87,6 +87,21 @@ function Cover() {
   
       {/* 메인 컨테이너 */}
       <div style={containerStyle}>
+        {/* 노치 */}
+            <div
+                style={{
+                    position: "absolute",
+                    top: "0vw",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    width: "10vw",
+                    height: "1.7vw",
+                    background: "black",
+                    borderRadius: "0 0 2vw 2vw",
+                    zIndex: 10,
+                    opacity: 0.85,
+                }}
+            />
         <div style={wrapperStyle}>
           <div style={textWrapperStyle}>
             <p style={pStyle}>여행을</p>
