@@ -80,7 +80,7 @@ function TodayFortune() {
         position: "absolute",
         bottom: "0vw",
         width: "23.4vw",
-        margin: "2vw auto 0 0",
+        margin: "2vw auto 0 20vw",
         display: "block",
         zIndex: 1
     };
@@ -127,15 +127,15 @@ function TodayFortune() {
                                     fontFamily: "'HakgyoansimChilpanjiugaeTTF-B', sans-serif"
                                 }}
                             >
-                                더 자세한 운세가 궁금하다면&nbsp;
-                                <a
+                                {/* 더 자세한 운세가 궁금하다면&nbsp; */}
+                                {/* <a
                                     href="https://m.search.naver.com/search.naver?where=m&sm=mtp_hty.top&query=%EC%98%A4%EB%8A%98%EC%9D%98%20%EC%9A%B4%EC%84%B8"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{ color: '#1e90ff', textDecoration: 'underline', fontWeight: 'bold' }}
                                 >
-                                    네이버 오늘의 운세 바로가기
-                                </a>
+                                    네이버 오늘의 운세 바로가기 */}
+                                {/* </a> */}
                             </span>
                         </div>
                     </>
