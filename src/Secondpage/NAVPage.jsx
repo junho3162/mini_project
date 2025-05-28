@@ -108,7 +108,7 @@ function NAVPage() {
     };
 
     const handleBox3Click = () => {
-        navigate('/Sharepage'); 
+        navigate('/Mappage'); 
     };
 
     return (
@@ -141,7 +141,7 @@ function NAVPage() {
                 <h4>기록 확인</h4>
             </div>
             {/* 추천 여행지 박스 */}
-            <div style={boxStyle3} alt="공유 페이지" className="box-animate" oncClick={handleBox3Click}> 
+            <div style={boxStyle3} alt="추천 여행지 페이지" className="box-animate" onClick={handleBox3Click}> 
                 <h4>추천 여행지 보러가기</h4>
             </div>
         </div>
