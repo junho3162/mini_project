@@ -1,0 +1,12 @@
+/* 화살표 컨테이너와 이미지에 공통 hover 효과 */
+.arrow-img-wrapper,
+.arrow-img-wrapper .arrow-img-container,
+.arrow-img-wrapper .arrow-img {
+  transition: transform 0.2s;
+}
+
+.arrow-img-wrapper:hover,
+.arrow-img-wrapper:hover .arrow-img-container,
+.arrow-img-wrapper:hover .arrow-img {
+  transform: scale(1.12);
+}
