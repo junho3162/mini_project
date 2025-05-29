@@ -10,7 +10,7 @@ function Cover() {
     const audio = new Audio(process.env.PUBLIC_URL + '/페이지넘기는소리1.mp3');
     audio.play();
 
-    navigate('/NAV');
+    navigate('/Mainpage'); // 페이지 이동
   };
 
   // 메인 컨테이너 스타일

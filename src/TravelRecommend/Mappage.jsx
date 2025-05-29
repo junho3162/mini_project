@@ -128,11 +128,6 @@ function Map() { // 메인 컴포넌트
     transition: "transform 0.2s", // 부드러운 확대 효과
   };
 
-  // 홈 버튼 클릭 시 메인(홈)으로 이동
-  const handleArrowClick = () => {
-        navigate(''); //재민님이 만드신 홈화면 루트패스 경로를 navigate에다가 삽입
-    };
-
   // 애니메이션 트리거
   const handleLocationClick = (loc) => { // 마커 클릭 시 ShowBoxes가 true가 되어 나타남 슉슉
     setSelected(loc);
@@ -162,6 +157,7 @@ function Map() { // 메인 컴포넌트
             }}
             onMouseEnter={() => setIsArrowHover(true)}
             onMouseLeave={() => setIsArrowHover(false)}
+            onClick={() => navigate('/Mainpage')} // 컨테이너 클릭 시 mainpage로 이동
           >
             <div
               style={{
@@ -172,7 +168,6 @@ function Map() { // 메인 컴포넌트
             <img
               src={arrow}
               alt="홈으로"
-              onClick={handleArrowClick}
               style={{
                 ...arrowImgStyle,
                 transform: isArrowHover ? "scale(1.12)" : "scale(1)",
@@ -187,7 +182,6 @@ function Map() { // 메인 컴포넌트
                   src={selected.img}
                   alt={selected.name}
                   style={{ width: "12vw", borderRadius: "2.47vw", height: "8vw" }}
-                  // onClick={() => window.open(selected.img, "_blank")}
                 />
               </div>
               <div style={bigboxStyle}>

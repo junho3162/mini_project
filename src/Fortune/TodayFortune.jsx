@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // 추가
 import './TodayFortune.css';
-import BackgroundImg from '../Images/Fortunepage-Background.png'; // 배경 이미지 import
+import BackgroundImg from '../Images/Fortunepage-Background.png';
 import FlowerDuck from '../Images/flowerduck.png';
 import NormalDuck from '../Images/normalduck.png';
 import SleepDuck from '../Images/sleepduck.png';
 import UmbrellaDuck from '../Images/umbrelladuck.png';
-import DotTypingWithCallback from './DotTypingWithCallback'; // 분리한 컴포넌트 import
+import DotTypingWithCallback from './DotTypingWithCallback';
+import arrow from '../Images/Homearrow.png'; // 화살표 이미지 import
 
 function TodayFortune() {
     // 점 애니메이션 상태
@@ -14,6 +16,9 @@ function TodayFortune() {
     const [showDots, setShowDots] = useState(false);
     const [showImg, setShowImg] = useState(false);
     
+    const navigate = useNavigate(); // 추가
+    const [isArrowHover, setIsArrowHover] = useState(false); // 화살표 hover 상태
+
     // 점(...)이 나타난 뒤 0.5초 후 이미지도 fade-in
     useEffect(() => {
         if (dotDone) {
@@ -92,6 +97,46 @@ function TodayFortune() {
         zIndex: 1
     };
 
+    // 홈(화살표) 버튼 wrapper 스타일 (hover 효과용 클래스 추가)
+  const arrowImgWrapperStyle = {
+    position: "absolute",
+    top: "1vw",
+    left: "1vw",
+    width: "2vw",
+    height: "2vw",
+    zIndex: 10,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    transition: "transform 0.2s", // 부드러운 확대 효과
+    cursor: "pointer"
+  };
+
+  // 홈(화살표) 버튼 배경 원 스타일
+  const arrowImgContainerStyle = {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    zIndex: 1,
+    background: "#FFFFFF",
+    borderRadius: "50%",
+    cursor: "pointer",
+    border: "0.1vw solid #E0F1F6",
+    transition: "transform 0.2s", // 부드러운 확대 효과
+  };
+
+  // 홈(화살표) 이미지 스타일
+  const arrowImgStyle = {
+    width: "70%",
+    height: "70%",
+    zIndex: 2,
+    position: "relative",
+    objectFit: "contain",
+    borderRadius: "50%",
+    cursor: "pointer",
+    transition: "transform 0.2s", // 부드러운 확대 효과
+  };
+
     // 선택된 이미지에 맞는 텍스트 인덱스 구하기
     const selectedIdx = images.findIndex(img => img === selectedImg);
 
@@ -113,6 +158,31 @@ function TodayFortune() {
                     opacity: 0.85,
                 }}
             />
+            {/* 홈(화살표) 버튼 */}
+            <div
+                style={{
+                    ...arrowImgWrapperStyle,
+                    transform: isArrowHover ? "scale(1.12)" : "scale(1)",
+                }}
+                onMouseEnter={() => setIsArrowHover(true)}
+                onMouseLeave={() => setIsArrowHover(false)}
+                onClick={() => navigate('/Mainpage')}
+            >
+                <div
+                    style={{
+                        ...arrowImgContainerStyle,
+                        transform: isArrowHover ? "scale(1.12)" : "scale(1)",
+                    }}
+                ></div>
+                <img
+                    src={arrow}
+                    alt="홈으로"
+                    style={{
+                        ...arrowImgStyle,
+                        transform: isArrowHover ? "scale(1.12)" : "scale(1)",
+                    }}
+                />
+            </div>
             {/* 배경 이미지 */}
             <img src={BackgroundImg} alt="배경 이미지" style={BackgroundImgStyle}/>
             {/* "오늘의 운세는" 텍스트는 항상 표시 */}
