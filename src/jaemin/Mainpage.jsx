@@ -145,7 +145,6 @@ const handleSearch = () => {
   return (
     <div className="달력"> {/* 전체 앱 컨테이너 */}
       <div className="box">
-        <div className="noche"></div> {/* 노치 스타일 적용 */}
       {writingVisible && ( // 글쓰기 창 표시 조건
        <div className='글쓰기'>
         <div className='바탕' onClick={hideWriting}></div> {/* 바탕 클릭 시 닫기 */}

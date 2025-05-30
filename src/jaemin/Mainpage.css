@@ -331,6 +331,7 @@
   background-color: #E0F1F6; /* 파란 배경 */
   border-radius: 30px;
   z-index: 101;
+  cursor: pointer;
 }
 
 .메뉴2 {
@@ -342,6 +343,7 @@
   background-color: #E0F1F6; /* 파란 배경 */
   border-radius: 30px;
   z-index: 101;
+  cursor: pointer;
 }
 
 .메뉴3 {
@@ -353,6 +355,7 @@
   background-color: #E0F1F6; /* 파란 배경 */
   border-radius: 30px;
   z-index: 101;
+  cursor: pointer;
 }
 
 .오른쪽파란박스 p {
