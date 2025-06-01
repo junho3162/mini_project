@@ -1,0 +1,128 @@
+/* BlogList.css */
+
+/* 핸드폰 모양 화면 */
+.container {
+    position: relative;
+    max-width: auto;
+    min-width: 15vw;
+    width: 20vw;
+    min-height: 30vw;
+    height: 43vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: black;
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 2vw;
+    border: 0.2vw solid black;
+    overflow: visible;
+}
+
+/* 검색창 컨테이너 */
+.blog-list-search {
+    position: absolute;
+    width: 19.5vw;
+    height: 3vw;
+    left: 1.8vw;
+    top: 7vw;
+
+    background: rgba(170, 203, 212, 0.22);
+
+    display: flex;
+    justify-content: right; /* 오른쪽 정렬 */
+    align-items: center;
+    gap: 0.5rem; /* 아이콘과 input 간격 */
+}
+
+/* 실질적인 인풋이 들어가는 칸 */
+.search-input {
+    width: 80%; /* 입력창 너비 조정 */
+    height: 70%; /* 입력창 높이 조정 */
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: rgba(170, 203, 212, 0.01);
+    border: none;
+}
+
+.search-icon {
+    width: 2.2vw; /* 아이콘 크기 */
+    cursor: pointer; /* 클릭 가능 표시 */
+    
+    font-size: 1.5rem; /* 아이콘 크기 조정 */
+}
+
+/* 검색 리스트 */
+.record-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: auto; /* 스크롤 가능하도록 설정 */
+
+    position: absolute;
+    width: 21vw;
+    height: 27vw;
+    left: 1.15vw;
+    top: 13vw;
+
+    background: rgba(235, 247, 250, 0.55);
+    border-radius: 10px;
+
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+/* 레코드 카드 스타일 */
+.record-card {
+    width: 18vw;
+    height: 4.5vw;
+    margin: 0.5vw 0;
+    padding: 0.5vw;
+    background: rgba(170, 203, 212, 0.22);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* 클릭 가능 표시 */
+}
+
+/* 미완 */
+.delete-btn {
+    display: flex;
+}
+
+.page-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* 컨테이너 아래에 고정 */
+  bottom: 2vw; /* 컨테이너 아래에서 간격 */
+  left: 50%; /* 수평 중앙 정렬 */
+  transform: translateX(-50%); /* 수평 중앙 정렬 보정 */
+  gap: 0.5rem;
+}
+
+.page-btn {
+  background-color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.page-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.page-btn.active {
+  background-color: lightblue;
+  color: black;
+  
+}

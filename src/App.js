@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'; // 라우팅 �
 // import Sharepage from './Sharepage/Shraepage';
 import Map from './TravelRecommend/Mappage'; // 여행지 추천 페이지 import
 import Main from './jaemin/Mainpage'; // 메인 페이지(jaemin's) import
+import TravelWriter from './jaemin/TravelWriter'; // 여행 기록 작성 페이지 import
+import BlogList from './jaemin/BlogList';
 
 function App() {
   return (
@@ -29,6 +31,8 @@ function App() {
             <Route path='/Mappage' element={<Map/>}/>
             {/* 메인 페이지(jaemin's) */}
             <Route path='/Mainpage' element={<Main/>}/>
+            <Route path='/Mainpage/write' element={<TravelWriter/>}/>
+            <Route path='/Mainpage/bloglist' element={<BlogList/>}/>
           </Routes>
         </BrowserRouter>
       </div>

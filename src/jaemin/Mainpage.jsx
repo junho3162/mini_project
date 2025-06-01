@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // 추가
 import './Mainpage.css'; // CSS 파일 임포트
+import TravelWriter from './TravelWriter';
 
 function Main() {
     const [menuVisible, setMenuVisible] = useState(false); // 메뉴바 표시 여부
@@ -145,47 +146,8 @@ const handleSearch = () => {
   return (
     <div className="달력"> {/* 전체 앱 컨테이너 */}
       <div className="box">
-      {writingVisible && ( // 글쓰기 창 표시 조건
-       <div className='글쓰기'>
-        <div className='바탕' onClick={hideWriting}></div> {/* 바탕 클릭 시 닫기 */}
-        <img src="오리.png" className="오리2" alt="오리3" />
-        <div className='일기상자'>
-        <div className='동그라미2'>
-          <p>이번여행 즐거우셨나요?</p>
-        </div>
-        <div className='일기상자2'>
-          <img src="삭제.png" className="삭제" alt="삭제"style={{ cursor: 'pointer' }} onClick={handleDeleteRecord}/> {/* 삭제 버튼 */}
-          <img src={weatherImages[weatherIndex]} className="해2" alt="날씨" onClick={handleWeatherClick}/> {/* 날씨 아이콘 */}
-          <img src="체크.png" className="체크" alt="저장" onClick={handleSaveRecord} style={{cursor: 'pointer'}}/> {/* 저장 버튼 */}
-          <div className='기록가능'onClick={handleRecordClick}> {/* 텍스트 입력 영역 */}
-           <div className='선5'></div>
-           <div className='선6'></div>
-           <div className='선7'></div>
-           <div className='선8'></div>
-           {isInputVisible && (
-           <textarea
-            className="기록입력"
-            value={text}
-            onChange={handleInputChange}/>
-           )}
-          </div>
-          <div className='카메라칸2' onClick={() => document.getElementById('imageUpload').click()}>
-          {selectedImage ? (
-           <img src={selectedImage} alt="미리보기" className="미리보기이미지" />
-           ) : (
-           <img src="카메라.png" className="카메라2" alt="카메라 아이콘" />
-          )}
-          </div>
-          <input
-          id="imageUpload"
-          type="file"
-          accept="image/*"
-          style={{ display: 'none' }}
-          onChange={handleImageUpload}/>
-        </div>
-        </div>
-       </div>
-        )}
+        <div className="noche"></div> {/* 노치 스타일 적용 */}
+        {writingVisible && <TravelWriter hideWriting={hideWriting} />}
       {recordVisible && ( // 기록 보기 창
        <div className='기록'>
         <div className='바탕2'>
@@ -341,7 +303,7 @@ const handleSearch = () => {
         <img src="꽃2.png" className="꽃2" alt="오리3"
           onClick={() => window.location.href = "/Mappage"} // ← 원하는 경로로 이동
         />
-        <img src="꽃3.png" className="꽃3" alt="오리3" onClick={toggleRecord} />
+        <img src="꽃3.png" className="꽃3" alt="오리3" onClick={() => navigate('/Mainpage/bloglist')} />
        </div>
      )}
       </div>
